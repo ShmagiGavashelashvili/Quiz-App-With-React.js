@@ -32,7 +32,7 @@ class Form extends Component {
 
         } else if (this.state.category && !(this.state.dificulty && this.state.type)){
             alert('Please Choose Dificulty and Type');
-        }
+        }  
     }
     render(){
         const { type, dificulty, category } = this.state;
@@ -77,7 +77,7 @@ class Form extends Component {
                     <select value={type} id='type' name='type' onChange={this.handleChange}>
                         <option></option>
                         <option value='multiple'>Multiple Choise</option>
-                        <option value='boolean'>True / false</option>
+                        {/* <option value='boolean'>True / false</option> */}
                     </select>
                     <button className='form-btn'>Get Questions</button>
                 </form>
