@@ -77,6 +77,9 @@ class Form extends Component {
                     <select value={type} id='type' name='type' onChange={this.handleChange}>
                         <option></option>
                         <option value='multiple'>Multiple Choise</option>
+
+                        {/* When choosing 'Boolean', in some cases, there is no information */}
+
                         {/* <option value='boolean'>True / false</option> */}
                     </select>
                     <button className='form-btn'>Get Questions</button>
