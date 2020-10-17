@@ -1,0 +1,117 @@
+
+.form {
+    width: 60%;
+}
+
+.form select{
+    display: block;
+    text-align: center;
+    margin: .2rem auto;
+    border: none;
+    color:  rgb(245, 240, 240);
+    text-transform: uppercase;
+    padding: .6vw;
+    background-color: rgb(141, 177, 141);
+    border-radius: .5rem;
+    cursor: pointer;
+    outline: none;
+    font-weight: 700;
+    font-size: 1vw;
+    width: 50%;
+    box-shadow: 0 3px 5px 2px rgba(0,0,0, .5);
+    letter-spacing: .9px;
+}
+
+.form label {
+    text-transform: uppercase;
+    color: rgb(141, 177, 141);
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.form-btn {
+    background-color: rgb(141, 177, 141);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px 2px rgba(0,0,0, .5);
+    text-align: center;
+    cursor: pointer;
+    padding: .7vw;
+    margin-top: 1.5vw;
+    color: rgb(245, 240, 240);
+    font-weight: 700;
+    font-size: 1vw;
+    width: 50%;
+    text-transform: uppercase;
+    transform: translateY(-1px);
+    transition: all .4s;
+}
+
+.form-btn:hover {
+    box-shadow: none;
+}
+
+.form-btn:active {
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+
+
+@media (min-width: 320px) { 
+    .form {
+        width: 100%;
+        margin-right: 11vw;
+        margin-bottom: 4vw;
+    }
+    
+    .form select{
+        width: 100%;
+        padding: 2vw;
+        font-size: 2.5vw;
+    }
+    
+    .form label {
+      font-size: 2vw;
+    }
+    
+    .form-btn {
+        margin-top: 4vw;
+        font-size: 2.5vw;
+        width: 100%;
+        padding: 2.5vw;
+    }
+}
+
+@media (min-width: 768px){
+    .form {
+        margin-right: 5vw;
+    }
+}
+
+
+@media (min-width: 992px){
+    .form {
+        width: 80%;
+    }
+    .form select{
+        margin: .2rem auto;
+        padding: .6vw;
+        width: 70%;
+        font-size: 1.5vw;
+    }
+    
+    .form label {
+        font-weight: 700;
+        font-size: 1.5vw;
+    }
+    
+    .form-btn {
+        padding: .75vw;
+        margin-top: 1.5vw;
+        font-size: 1.5vw;
+        width: 70%;
+    }
+    
+}
