@@ -1,45 +1,29 @@
-import React, { Component } from 'react';
+import React  from 'react';
+import useInputState from '../Hooks/useInputState';
 import '../styles/form.style.css';
 
-class Form extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            category: '', 
-            dificulty: '',
-            type: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+function Form (props) {
+  const [category, handleChangeCategory ] = useInputState('');
+  const [dificulty, handleChangeDificulty ] = useInputState('');
+  const [type, handleChangeType ] = useInputState('');
 
-    handleChange(e){
-        this.setState({
-            [e.target.name] : e.target.value
-        })
-    }
-
-    handleSubmit(e){
+    const handleSubmit = e => {
         e.preventDefault();
-        this.props.getQuestions(this.state.category, this.state.dificulty, this.state.type);
-
+        props.getQuestions(category, dificulty, type);
         // three of them must be chosen
-
-        if(!(this.state.category || (this.state.dificulty && this.state.type))){
+        if(!(category || (dificulty && type))){
             alert('Please Choose Category');
 
         // dificulty and type must be chosen
 
-        } else if (this.state.category && !(this.state.dificulty && this.state.type)){
+        } else if (category && !(dificulty && type)){
             alert('Please Choose Dificulty and Type');
         }  
     }
-    render(){
-        const { type, dificulty, category } = this.state;
         return (
-                <form className='form' onSubmit={this.handleSubmit}>
+                <form className='form' onSubmit={handleSubmit}>
                     <label htmlFor='category'>Choose Category:</label>
-                    <select value={category} id='category' name='category' onChange={this.handleChange}>
+                    <select value={category} id='category' name='category' onChange={handleChangeCategory}>
                         <option value=''>Any Category</option>
                         <option value={9}>General Knowledge</option>
                         <option value={10}>Entertainment: Books</option>
@@ -67,22 +51,24 @@ class Form extends Component {
                         <option value={32}>Entertainment: Cartoon & Animations</option>
                     </select>
                     <label htmlFor='dificulty'>Choose Dificulty :</label>
-                    <select value={dificulty} id='dificulty' name='dificulty' onChange={this.handleChange}>
+                    <select value={dificulty} id='dificulty' name='dificulty' onChange={handleChangeDificulty}>
                         <option></option>
                         <option value='easy'>Easy</option>
                         <option value='medium'>Medium</option>
                         <option value='hard'>Hard</option>
                     </select>
                     <label htmlFor='type'>Select Type :</label>
-                    <select value={type} id='type' name='type' onChange={this.handleChange}>
+                    <select value={type} id='type' name='type' onChange={handleChangeType}>
                         <option></option>
                         <option value='multiple'>Multiple Choise</option>
+                        {/* When choosing 'Boolean', in some cases, there is no information */}
+
                         {/* <option value='boolean'>True / false</option> */}
                     </select>
                     <button className='form-btn'>Get Questions</button>
                 </form>
-        )
-    }
-}
+     )
+ }
+
 
 export default Form;
