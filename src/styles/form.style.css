@@ -54,6 +54,7 @@
 
 .form-btn:active {
     box-shadow: none;
+    overflow: hidden;
     transform: translateY(1px);
 }
 
