@@ -3,7 +3,7 @@ import '../styles/questions.style.css';
 import Answers from './Answers';
 
 function Questions ({ question, handleAnswer, correctAnswer, incorrectAnswers, guessedAnswers }){
-
+  
    const [shuffledAnswers, setShuffledAnswers ] = useState([])
         
     useEffect(() => {

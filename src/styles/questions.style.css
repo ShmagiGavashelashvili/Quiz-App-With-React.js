@@ -62,14 +62,14 @@
 
 @media (min-width: 320px) {
     .questions {
-        width: 76vw;
-        height: 43vw;
+        width: 100%;
+        height: auto;
         margin: 5.2vw 11vw 1vw 0vw;
      }
      
      .answers { 
          width: 90%;
-         height: 18vw;
+         height: auto;
          margin: 1rem auto;
      }
      
@@ -79,12 +79,11 @@
      }
     
      .answers button {
-        width: 25vw;
+        width: 6rem;
         height: 8vw;
-        font-size: 2vw;
+        font-size: 9px;
         margin: 2vw;
-        font-weight: 100;
-        letter-spacing: 1px;
+        font-weight: 500;
      }
      
      .question-title {
@@ -99,9 +98,13 @@
         margin: 0.2vw 10vw 3vw 5vw;
      }
      .answers { 
-        height: 20vw;
+        height: auto;
         margin: 5vw auto;
      }
+
+     .answers button {
+        font-size: 13px;
+    }
      .question-title {
         font-size: 2.5vw;
      }
@@ -112,7 +115,7 @@
 @media (min-width: 992px){
     .questions {
         width: 43vw;
-        height: 22vw;
+        height: auto;
         margin: 2.5vw 4vw 1vw 0;
      }
      .answers { 

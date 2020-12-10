@@ -5,7 +5,7 @@ function Answers ({ handleAnswer, answ, correctAnswer }) {
       <button 
          onClick={(e) => handleAnswer(e.target.innerText, correctAnswer)}
          dangerouslySetInnerHTML={{ __html : answ}} >
-    </button>
+     </button>
      )
   }
 

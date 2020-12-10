@@ -11,200 +11,197 @@
 
 
 .question-container {
-  display: flex;
-  flex-direction: column;
-  margin: 2vw auto;
-  align-items: center;
-  width: 76vw;
-  height: 113vw;
-  justify-content: space-between;
-  background-color: rgb(248, 244, 244);
-  border-radius: 10px;
-  box-shadow: 0 2px 7px rgba(0,0,0, .5);
-}
-
-
-.winner {
-   animation: changeColorForCorrect 1s ease-in-out;
-}
-
-@keyframes changeColorForCorrect {
-   0%  {
-     background-color: rgb(20, 167, 44);
-   }
-   100% {
+    display: flex;
+    flex-direction: column;
+    margin: 2vw auto;
+    align-items: center;
+    width: 90%;
+    height: 113vw;
+    justify-content: space-between;
     background-color: rgb(248, 244, 244);
-   }
-}
-
-.lose {
-  animation: changeColorForIncorrect 1s ease-in-out;
-}
-
-@keyframes changeColorForIncorrect {
-  0%  {
-    background-color: rgb(240, 9, 9);
-  }
-  100% {
-   background-color: rgb(248, 244, 244);
-  }
-}
-
-.notification {
-  width: 30%;
-  height: 8vw;
-  margin: 0 36vw;
-  border-radius: 10px;
-  background-color: rgb(248, 244, 244);
-  position: relative;
-  box-shadow: 0 2px 7px rgba(0,0,0, .5);
-}
-
-.notification-msg {
-  position: absolute;
-  left: 11%;
-  text-transform: uppercase;
-  color: rgb(141, 177, 141);
-  font-weight: 700;
-}
-
-.notification-btn {
-    background-color: rgb(141, 177, 141);
-    border: none;
-    outline: none;
     border-radius: 10px;
-    box-shadow: 0 2px 4px 1px rgba(0,0,0, .5);
-    text-align: center;
-    cursor: pointer;
-    padding: .7vw;
-    color: rgb(245, 240, 240);
-    font-weight: 700;
-    font-size: 1vw;
-    width: 50%;
-    text-transform: uppercase;
-    transform: translateY(-1px);
-    transition: all .4s;
-    position: absolute;
-    top: 50%;
-    left: 26%;
-}
-
-.notification-btn:hover {
-  box-shadow: none;
-}
-
-.notification-btn:active {
-  box-shadow: none;
-  transform: translateY(1px);
-}
-
-
-.svg-inline--fa.fa-w-16 {
-  width: 2rem;
-  height: 2rem;
-  margin-bottom: 2.5rem;
-  color: rgb(141, 177, 141);
-  animation-name: IncreaseIcon;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  transition: .4s;
-}
-
-.svg-inline--fa.fa-w-16:hover {
-  color: rgb(110, 158, 110);
-}
-
-@keyframes IncreaseIcon {
-  0% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* ==== mobile version === */
-
-@media (min-width: 320px) { 
-  .App {
-    width: 100%;
-  }
-
-  .App-name {
-    text-shadow: none;
+    box-shadow: 0 2px 7px rgba(0,0,0, .5);
   }
   
-  .notification {
-    width: 50%;
-    height: 18vw;
-    margin: 0 25vw;
+  
+  .winner {
+     animation: changeColorForCorrect 1s ease-in-out;
   }
   
-  .notification-msg {
-    left: 5%;
-    font-size: 2.2vw;
+  @keyframes changeColorForCorrect {
+     0%  {
+       background-color: rgb(20, 167, 44);
+     }
+     100% {
+      background-color: rgb(248, 244, 244);
+     }
   }
   
-  .notification-btn {
-      padding: 1.7vw;
-      font-size: 2.1vw;
-      width: 61%;
-      left: 21%;
-  }
- .App-name {
-    font-size: 5vw;
- }
-
- .question-container {
-    height: auto;
- }
-}
-
-/* ==== tablet version === */
-
-@media (min-width: 768px){
-  .notification {
-    width: 50%;
-    height: 18vw;
-    margin: 0 25vw;
+  .lose {
+    animation: changeColorForIncorrect 1s ease-in-out;
   }
   
- .question-container {
-    height: auto;
- }
-}
-
-/* ===== large devices ==== */
-
-@media (min-width: 992px){
-
-  .App-name {
-    text-shadow: 1px 5px 4px rgba(0,0,0, .5);
-  }
-
-  .question-container {
-    width: 64vw;
-    height: auto;
-  }
-
-  .notification {
-    width: 45%;
-    height: 16vw;
-    margin: 0vw 27vw;
-  }
-
-  .notification-msg {
-    left: 13%;
-    font-size: 1.7vw;
-  }
-  .notification-btn {
-    padding: 1vw;
-    font-size: 1.5vw;
-    left: 20%;
+  @keyframes changeColorForIncorrect {
+    0%  {
+      background-color: rgb(240, 9, 9);
     }
-}
-
-
+    100% {
+     background-color: rgb(248, 244, 244);
+    }
+  }
+  
+  .notification {
+    border-radius: 10px;
+    background-color: rgb(248, 244, 244);
+    position: relative;
+    box-shadow: 0 2px 7px rgba(0,0,0, .5);
+  }
+  
+  .notification-msg {
+    position: absolute;
+    left: 11%;
+    text-transform: uppercase;
+    color: rgb(141, 177, 141);
+    font-weight: 700;
+  }
+  
+  .notification-btn {
+      background-color: rgb(141, 177, 141);
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px 1px rgba(0,0,0, .5);
+      text-align: center;
+      cursor: pointer;
+      padding: .7vw;
+      color: rgb(245, 240, 240);
+      font-weight: 700;
+      font-size: 1vw;
+      width: 50%;
+      text-transform: uppercase;
+      transform: translateY(-1px);
+      transition: all .4s;
+      position: absolute;
+      top: 50%;
+      left: 26%;
+  }
+  
+  .notification-btn:hover {
+    box-shadow: none;
+  }
+  
+  .notification-btn:active {
+    box-shadow: none;
+    transform: translateY(1px);
+  }
+  
+  
+  .svg-inline--fa.fa-w-16 {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 2.5rem;
+    color: rgb(141, 177, 141);
+    animation-name: IncreaseIcon;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    transition: .4s;
+  }
+  
+  .svg-inline--fa.fa-w-16:hover {
+    color: rgb(110, 158, 110);
+  }
+  
+  @keyframes IncreaseIcon {
+    0% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* ==== mobile version === */
+  
+  @media (min-width: 320px) { 
+    .App {
+      width: 100%;
+    }
+  
+    .App-name {
+      text-shadow: none;
+    }
+    
+    .notification {
+      width: 50%;
+      height: 18vw;
+      margin: 0 25vw;
+    }
+    
+    .notification-msg {
+      left: 5%;
+      font-size: 2.2vw;
+    }
+    .notification-btn {
+        padding: 1.7vw;
+        font-size: 2.1vw;
+        width: 61%;
+        left: 21%;
+    }
+   .App-name {
+      font-size: 5vw;
+   }
+  
+   .container {
+      height: auto;
+   }
+  }
+  
+  /* ==== tablet version === */
+  
+  @media (min-width: 768px){
+    .notification {
+      width: 50%;
+      height: 18vw;
+      margin: 0 25vw;
+    }
+    
+   .question-container {
+      height: auto;
+   }
+  }
+  
+  /* ===== large devices ==== */
+  
+  @media (min-width: 992px){
+  
+    .App-name {
+      text-shadow: 1px 5px 4px rgba(0,0,0, .5);
+    }
+  
+    .question-container {
+      width: 64vw;
+      height: auto;
+    }
+  
+    .notification {
+      width: 45%;
+      height: 16vw;
+      margin: 0vw 27vw;
+    }
+  
+    .notification-msg {
+      left: 13%;
+      font-size: 1.7vw;
+    }
+    .notification-btn {
+      padding: 1vw;
+      font-size: 1.5vw;
+      left: 20%;
+      }
+  }
+  
+  
+  
