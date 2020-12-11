@@ -42,11 +42,12 @@
     color: rgb(245, 240, 240);
     font-weight: 700;
     font-size: 1vw;
-    width: 50%;
     text-transform: uppercase;
     transform: translateY(-1px);
     transition: all .4s;
 }
+
+
 
 .form-btn:hover {
     box-shadow: none;
@@ -115,4 +116,23 @@
         width: 70%;
     }
     
+}
+
+.iphone {
+    background-color: #8db18d;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px 2px rgba(0,0,0, .5);
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-top: 1.5vw;
+    color: rgb(245, 240, 240);
+    font-weight: 700;
+    width: 55%;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transform: translateY(-1px);
+    transition: all .4s;
 }
