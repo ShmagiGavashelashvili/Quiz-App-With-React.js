@@ -65,7 +65,7 @@ function Form (props) {
 
                         {/* <option value='boolean'>True / false</option> */}
                     </select>
-                    <button className='form-btn'>Get Questions</button>
+                    <button className='iphone'>Get Questions</button>
                 </form>
      )
  }
