@@ -65,7 +65,7 @@ function Form (props) {
 
                         {/* <option value='boolean'>True / false</option> */}
                     </select>
-                    <button className='iphone'>Get Questions</button>
+                    <button className={window.navigator.userAgent.match(/iphone/i) ? 'iphone' : 'form-btn'}>Get Questions</button>
                 </form>
      )
  }
