@@ -1,6 +1,7 @@
 
 .form {
     width: 60%;
+    
 }
 
 .form select{
@@ -64,8 +65,7 @@
 @media (min-width: 320px) { 
     .form {
         width: 100%;
-        margin-right: 11vw;
-        margin-bottom: 4vw;
+        margin: 1rem auto;
     }
     
     .form select{
@@ -87,9 +87,9 @@
 }
 
 @media (min-width: 768px){
-    .form {
+    /* .form {
         margin-right: 5vw;
-    }
+    } */
 }
 
 
