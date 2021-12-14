@@ -1,4 +1,9 @@
-const categories = [
+interface Categories {
+  value: string | number,
+  category: string
+}
+
+const categories: Array<Categories> = [
   {
     value: "",
     category: "Choose Category:",

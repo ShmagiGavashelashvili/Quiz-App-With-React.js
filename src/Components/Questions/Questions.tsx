@@ -1,35 +1,45 @@
 import React, { useState, useEffect } from "react";
-import _ from "lodash";
+import { shuffle } from "lodash";
 import "./questions.style.css";
+import { CurrQuiestion } from '../Quizz/Quizz'
 
-function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
-  const [shuffledAnswers, setShuffledAnswers] = useState([]);
-  const [selectedIndx, setSelectedIndx] = useState(null);
-  const [correctIndx, setCorrectIndex] = useState(null);
-  const [correctAnswer, setCorrectAnswer] = useState(0);
-  const [totalAnswer, setTotalAnswer] = useState(0);
-  const [answered, setAnswered] = useState(false);
+
+
+interface QuestionProps {
+  currentQuestion: CurrQuiestion,
+  nextQuestion(): void,
+  quizAgain(): void,
+  data: Array<object>
+}
+
+function Questions({ currentQuestion, nextQuestion, quizAgain, data }: QuestionProps) {
+  const [shuffledAnswers, setShuffledAnswers] = useState<string[]>([]);
+  const [selectedIndx, setSelectedIndx] = useState<number | null>(null);
+  const [correctIndx, setCorrectIndex] = useState<number | null>(null);
+  const [correctAnswer, setCorrectAnswer] = useState<number>(0);
+  const [totalAnswer, setTotalAnswer] = useState<number>(0);
+  const [answered, setAnswered] = useState<boolean>(false);
 
   useEffect(() => {
-    let answ = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
-    setShuffledAnswers(_.shuffle(answ));
+    let answ: string[] = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
+    setShuffledAnswers(shuffle(answ));
   }, [currentQuestion.incorrect_answers, currentQuestion.correct_answer, currentQuestion]);
 
   useEffect(() => {
     setCorrectIndex(shuffledAnswers.indexOf(currentQuestion.correct_answer));
   }, [shuffledAnswers, currentQuestion.correct_answer, currentQuestion]);
 
-  const selectedAnswer = (indx) => {
+  const selectedAnswer = (indx: number): void => {
     setSelectedIndx(indx);
   };
-  const submetedAnswer = () => {
+  const submetedAnswer = (): void => {
     if (correctIndx === selectedIndx) {
-      setCorrectAnswer((prev) => prev + 1);
+      setCorrectAnswer((prev): number => prev + 1);
     }
     setAnswered(true);
-    setTotalAnswer((prev) => prev + 1);
+    setTotalAnswer((prev): number => prev + 1);
   };
-  const nextHandler = () => {
+  const nextHandler = (): void => {
     nextQuestion();
     setCorrectIndex(null);
     setSelectedIndx(null);
@@ -47,21 +57,20 @@ function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
           ></p>
           <div className="answers">
             <div className="btn-container">
-              {shuffledAnswers.map((answ, indx) => (
+              {shuffledAnswers.map((answ, indx): JSX.Element => (
                 <button
                   key={indx}
                   data-testid={`answers-${indx}`}
                   dangerouslySetInnerHTML={{ __html: answ }}
                   onClick={() => selectedAnswer(indx)}
-                  className={`${
-                    !answered && selectedIndx === indx
-                      ? "selected"
-                      : answered && correctIndx === indx
+                  className={`${!answered && selectedIndx === indx
+                    ? "selected"
+                    : answered && correctIndx === indx
                       ? "winner"
                       : answered && selectedIndx === indx && correctIndx !== indx
-                      ? "lose"
-                      : null
-                  }`}
+                        ? "lose"
+                        : null
+                    }`}
                   disabled={answered}
                 ></button>
               ))}

@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen, cleanup, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, cleanup } from "@testing-library/react";
 import Quizz from "../Quizz";
 import "@testing-library/jest-dom";
 import { mockAxios } from "../../../__Mocks__/axios";
@@ -27,7 +27,7 @@ describe("Quizz Component", () => {
     ];
 
     render(<Quizz />);
-    const url = "/quizz";
+    // const url = "/quizz";
     mockAxios.get.mockResolvedValueOnce(expectedData);
     const getQuestionButton = screen.getByRole("button", { name: /get questions/i });
     const category = screen.getByLabelText(/choose category:/i);

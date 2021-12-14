@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import "./spinner.css";
 
-const Spinner = () => {
+const Spinner = (): JSX.Element => {
   return (
     <div className="spinner" data-testid="spinner">
       <FontAwesomeIcon icon={faSpinner} />

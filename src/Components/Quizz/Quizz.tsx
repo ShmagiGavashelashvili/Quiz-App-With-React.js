@@ -5,12 +5,18 @@ import axios from "axios";
 import Spinner from "../Spinner/Spinner";
 import Questions from "../Questions/Questions";
 
-const Quizz = () => {
-  const [data, setData] = useState([]);
-  const [index, setIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
+export interface CurrQuiestion {
+  incorrect_answers: string[],
+  correct_answer: string,
+  question: string
+}
 
-  const getQuestions = async (category, dificulty, type) => {
+const Quizz = () => {
+  const [data, setData] = useState<Array<CurrQuiestion>>([]);
+  const [index, setIndex] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const getQuestions = async (category: number | string, dificulty: string, type: string) => {
     try {
       if (category && dificulty && type) {
         setLoading(true);
@@ -34,15 +40,14 @@ const Quizz = () => {
       console.log(error);
     }
   };
-  const nextQuestion = () => {
+  const nextQuestion = (): void => {
     setIndex(index + 1);
   };
 
-  const quizAgain = () => {
+  const quizAgain = (): void => {
     setData([]);
     setIndex(0);
   };
-
   return (
     <div className="question-container">
       <Form getQuestions={getQuestions} />

@@ -1,15 +1,20 @@
-import React from "react";
 import useInputState from "../../Hooks/useInputState";
 import "./form.style.css";
 import categories from "../../utils/Categories";
+import React from "react";
 
-function Form({ getQuestions }) {
+
+interface GetQuestion {
+  getQuestions(category: number | string, difficulty: string | number, type: string | number): void
+}
+
+function Form({ getQuestions }: GetQuestion): JSX.Element {
   const [category, handleChangeCategory] = useInputState("");
   const [dificulty, handleChangeDificulty] = useInputState("");
   const [type, handleChangeType] = useInputState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     getQuestions(category, dificulty, type);
     // three of them must be chosen
     if (!(category || (dificulty && type))) {

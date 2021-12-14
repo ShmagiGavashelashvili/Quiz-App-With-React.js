@@ -1,8 +1,7 @@
-import React from "react";
 import "./styles/App.css";
 import Quizz from "./Components/Quizz/Quizz";
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="App" id="up">
       <h1 className="App-name">Quiz App</h1>
