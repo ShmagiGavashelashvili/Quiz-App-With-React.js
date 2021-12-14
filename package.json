@@ -6,14 +6,15 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.20.0",
-    "lodash": "^4.17.20",
+    "axios": "^0.24.0",
+    "lodash": "^4.17.21",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "^4.0.3",
+    "update": "^0.7.4"
   },
   "scripts": {
     "start": "react-scripts start",
