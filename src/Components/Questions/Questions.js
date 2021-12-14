@@ -41,6 +41,7 @@ function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
         <li className="questions">
           {totalAnswer + 1}
           <p
+            data-testid="question"
             className="question-title"
             dangerouslySetInnerHTML={{ __html: currentQuestion.question }}
           ></p>
@@ -49,18 +50,18 @@ function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
               {shuffledAnswers.map((answ, indx) => (
                 <button
                   key={indx}
+                  data-testid={`answers-${indx}`}
                   dangerouslySetInnerHTML={{ __html: answ }}
                   onClick={() => selectedAnswer(indx)}
-                  className={`
-                      ${
-                        !answered && selectedIndx === indx
-                          ? "selected"
-                          : answered && correctIndx === indx
-                          ? "winner"
-                          : answered && selectedIndx === indx && correctIndx !== indx
-                          ? "lose"
-                          : ""
-                      }`}
+                  className={`${
+                    !answered && selectedIndx === indx
+                      ? "selected"
+                      : answered && correctIndx === indx
+                      ? "winner"
+                      : answered && selectedIndx === indx && correctIndx !== indx
+                      ? "lose"
+                      : null
+                  }`}
                   disabled={answered}
                 ></button>
               ))}

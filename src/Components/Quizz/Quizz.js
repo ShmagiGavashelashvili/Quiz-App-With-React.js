@@ -42,6 +42,7 @@ const Quizz = () => {
     setData([]);
     setIndex(0);
   };
+
   return (
     <div className="question-container">
       <Form getQuestions={getQuestions} />
