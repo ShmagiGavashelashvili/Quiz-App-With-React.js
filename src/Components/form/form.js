@@ -1,15 +1,16 @@
 import React from "react";
-import useInputState from "../Hooks/useInputState";
-import "../styles/form.style.css";
-import categories from "../utils/Categories";
+import useInputState from "../../Hooks/useInputState";
+import "./form.style.css";
+import categories from "../../utils/Categories";
 
-function Form(props) {
+function Form({ getQuestions }) {
   const [category, handleChangeCategory] = useInputState("");
   const [dificulty, handleChangeDificulty] = useInputState("");
   const [type, handleChangeType] = useInputState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.getQuestions(category, dificulty, type);
+    getQuestions(category, dificulty, type);
     // three of them must be chosen
     if (!(category || (dificulty && type))) {
       alert("Please Choose Category");
@@ -40,9 +41,6 @@ function Form(props) {
       <select value={type} id="type" name="type" onChange={handleChangeType}>
         <option></option>
         <option value="multiple">Multiple Choise</option>
-        {/* When choosing 'Boolean', in some cases, there is no information */}
-
-        {/* <option value='boolean'>True / false</option> */}
       </select>
       <button className={window.navigator.userAgent.match(/iphone/i) ? "iphone" : "form-btn"}>
         Get Questions

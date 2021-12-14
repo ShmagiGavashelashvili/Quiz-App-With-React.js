@@ -1,0 +1,22 @@
+.spinner {
+  text-align: center;
+  padding: 6rem;
+}
+
+.spinner svg {
+  font-size: 4rem;
+  animation-name: loading-spinner;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  color: rgb(141, 177, 141);
+}
+
+@keyframes loading-spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

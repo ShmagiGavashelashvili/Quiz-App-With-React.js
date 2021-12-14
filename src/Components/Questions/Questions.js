@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import _ from "lodash";
-import "../styles/questions.style.css";
+import "./questions.style.css";
 
 function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
@@ -24,10 +24,10 @@ function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
   };
   const submetedAnswer = () => {
     if (correctIndx === selectedIndx) {
-      setCorrectAnswer(correctAnswer + 1);
+      setCorrectAnswer((prev) => prev + 1);
     }
     setAnswered(true);
-    setTotalAnswer(totalAnswer + 1);
+    setTotalAnswer((prev) => prev + 1);
   };
   const nextHandler = () => {
     nextQuestion();
@@ -39,6 +39,7 @@ function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
     <>
       {totalAnswer < data.length ? (
         <li className="questions">
+          {totalAnswer + 1}
           <p
             className="question-title"
             dangerouslySetInnerHTML={{ __html: currentQuestion.question }}
@@ -84,9 +85,7 @@ function Questions({ currentQuestion, nextQuestion, quizAgain, data }) {
             Quiz Again?
           </button>
         </div>
-      ) : (
-        ""
-      )}
+      ) : null}
     </>
   );
 }
